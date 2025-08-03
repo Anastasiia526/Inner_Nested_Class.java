@@ -1,4 +1,4 @@
-package hometask;
+package hometask.distance;
 
 import java.util.Scanner;
 
