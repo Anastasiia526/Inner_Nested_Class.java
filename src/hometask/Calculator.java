@@ -13,25 +13,31 @@ public class Calculator {
 
     class Arithmetic {
         void add(int a, int b) {
-            System.out.println( a + " + " + b + " = " + (a + b));
+            System.out.println(a + " + " + b + " = " + (a + b));
         }
 
         void sub(int a, int b) {
-            System.out.println( a + " - " + b + " = " + (a - b));
+            System.out.println(a + " - " + b + " = " + (a - b));
         }
-        void mul(int a, int b){
+
+        void mul(int a, int b) {
             System.out.println(a + " * " + b + " = " + (a * b));
         }
-        void div(double a, double b){
-            if(b != 0){
-            System.out.println(a + " / " + b + " = " + (a / b));}
-            else {
-                System.out.println("На нуль ділити не можна!");
+
+        void div(int a, int b) {
+            try {
+                if (b == 0) {
+                    System.out.println("На нуль ділити не можна!");
+                    System.out.println(a + " / " + b + " = " + (a / b));
+                }
+            } catch (ArithmeticException e) {
+                System.out.println("Виключення " + e.getMessage());
             }
+
         }
     }
 }
-class CalculatorMain{
+class CalculatorMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введіть перше число: ");
